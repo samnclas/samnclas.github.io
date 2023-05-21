@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="id" prefix="og: https://ogp.me/ns#">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>What Is Silos In Devops - QnA</title>
+    <meta name="description" content="What Is Silos In Devops, Breaking down silos - how to solve communication problems when implementing DevOps across silos, , , , Nathen Harvey, 2018-08-10T18:03:09.000000Z, 20, Blow Up Your Silos: DevOps Makes Working Together More Efficient, e3zine.com, 1000 x 667, jpeg, , 20, what-is-silos-in-devops, QnA" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="What Is Silos In Devops - QnA" />
+    <meta property="og:description" content="What Is Silos In Devops, Breaking down silos - how to solve communication problems when implementing DevOps across silos, , , , Nathen Harvey, 2018-08-10T18:03:09.000000Z, 20, Blow Up Your Silos: DevOps Makes Working Together More Efficient, e3zine.com, 1000 x 667, jpeg, , 20, what-is-silos-in-devops, QnA" />
+    <meta property="og:site_name" content="QnA" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="What Is Silos In Devops - QnA" />
+    <meta name="twitter:description" content="What Is Silos In Devops, Breaking down silos - how to solve communication problems when implementing DevOps across silos, , , , Nathen Harvey, 2018-08-10T18:03:09.000000Z, 20, Blow Up Your Silos: DevOps Makes Working Together More Efficient, e3zine.com, 1000 x 667, jpeg, , 20, what-is-silos-in-devops, QnA" />
+    <link rel='stylesheet' id='generate-style-css' href='https://samnclas.github.io/css/main.min.css'?ver=3.2.4'
+        media='all' />
+    <link rel='stylesheet' id='ez-toc-css' href='https://samnclas.github.io/css/screen.min.css'?ver=2.0.40' media='all' />
+    <style id='generate-style-inline-css'>
+        body {
+            background-color: #f7f7f7;
+            color: #222222;
+        }
+
+        a {
+            color: #1e73be;
+        }
+
+        a:hover,
+        a:focus,
+        a:active {
+            color: #000000;
+        }
+
+        .wp-block-group__inner-container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .generate-back-to-top {
+            font-size: 20px;
+            border-radius: 3px;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            line-height: 40px;
+            width: 40px;
+            text-align: center;
+            z-index: 10;
+            transition: opacity 300ms ease-in-out;
+            opacity: 0.1;
+            transform: translateY(1000px);
+        }
+
+        .generate-back-to-top__show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .navigation-search {
+            position: absolute;
+            left: -99999px;
+            pointer-events: none;
+            visibility: hidden;
+            z-index: 20;
+            width: 100%;
+            top: 0;
+            transition: opacity 100ms ease-in-out;
+            opacity: 0;
+        }
+
+        .navigation-search.nav-search-active {
+            left: 0;
+            right: 0;
+            pointer-events: auto;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .navigation-search input[type="search"] {
+            outline: 0;
+            border: 0;
+            vertical-align: bottom;
+            line-height: 1;
+            opacity: 0.9;
+            width: 100%;
+            z-index: 20;
+            border-radius: 0;
+            -webkit-appearance: none;
+            height: 60px;
+        }
+
+        .navigation-search input::-ms-clear {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        .navigation-search input::-ms-reveal {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        .navigation-search input::-webkit-search-decoration,
+        .navigation-search input::-webkit-search-cancel-button,
+        .navigation-search input::-webkit-search-results-button,
+        .navigation-search input::-webkit-search-results-decoration {
+            display: none;
+        }
+
+        .gen-sidebar-nav .navigation-search {
+            top: auto;
+            bottom: 0;
+        }
+
+        :root {
+            --contrast: #222222;
+            --contrast-2: #575760;
+            --contrast-3: #b2b2be;
+            --base: #f0f0f0;
+            --base-2: #f7f8f9;
+            --base-3: #ffffff;
+            --accent: #1e73be;
+        }
+
+        .has-contrast-color {
+            color: var(--contrast);
+        }
+
+        .has-contrast-background-color {
+            background-color: var(--contrast);
+        }
+
+        .has-contrast-2-color {
+            color: var(--contrast-2);
+        }
+
+        .has-contrast-2-background-color {
+            background-color: var(--contrast-2);
+        }
+
+        .has-contrast-3-color {
+            color: var(--contrast-3);
+        }
+
+        .has-contrast-3-background-color {
+            background-color: var(--contrast-3);
+        }
+
+        .has-base-color {
+            color: var(--base);
+        }
+
+        .has-base-background-color {
+            background-color: var(--base);
+        }
+
+        .has-base-2-color {
+            color: var(--base-2);
+        }
+
+        .has-base-2-background-color {
+            background-color: var(--base-2);
+        }
+
+        .has-base-3-color {
+            color: var(--base-3);
+        }
+
+        .has-base-3-background-color {
+            background-color: var(--base-3);
+        }
+
+        .has-accent-color {
+            color: var(--accent);
+        }
+
+        .has-accent-background-color {
+            background-color: var(--accent);
+        }
+
+        body,
+        button,
+        input,
+        select,
+        textarea {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        body {
+            line-height: 1.5;
+        }
+
+        .entry-content>[class*="wp-block-"]:not(:last-child) {
+            margin-bottom: 1.5em;
+        }
+
+        .main-navigation .main-nav ul ul li a {
+            font-size: 14px;
+        }
+
+        .sidebar .widget,
+        .footer-widgets .widget {
+            font-size: 17px;
+        }
+
+        @media (max-width:768px) {
+            h1 {
+                font-size: 31px;
+            }
+
+            h2 {
+                font-size: 27px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            h4 {
+                font-size: 22px;
+            }
+
+            h5 {
+                font-size: 19px;
+            }
+        }
+
+        .top-bar {
+            background-color: #636363;
+            color: #ffffff;
+        }
+
+        .top-bar a {
+            color: #ffffff;
+        }
+
+        .top-bar a:hover {
+            color: #303030;
+        }
+
+        .site-header {
+            background-color: #ffffff;
+        }
+
+        .main-title a,
+        .main-title a:hover {
+            color: #222222;
+        }
+
+        .site-description {
+            color: #757575;
+        }
+
+        .main-navigation,
+        .main-navigation ul ul {
+            background-color: #ed4250;
+        }
+
+        .main-navigation .main-nav ul li a,
+        .main-navigation .menu-toggle,
+        .main-navigation .menu-bar-items {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul li:not([class*="current-menu-"]):hover>a,
+        .main-navigation .main-nav ul li:not([class*="current-menu-"]):focus>a,
+        .main-navigation .main-nav ul li.sfHover:not([class*="current-menu-"])>a,
+        .main-navigation .menu-bar-item:hover>a,
+        .main-navigation .menu-bar-item.sfHover>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        button.menu-toggle:hover,
+        button.menu-toggle:focus {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul li[class*="current-menu-"]>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        .navigation-search input[type="search"],
+        .navigation-search input[type="search"]:active,
+        .navigation-search input[type="search"]:focus,
+        .main-navigation .main-nav ul li.search-item.active>a,
+        .main-navigation .menu-bar-items .search-item.active>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        .main-navigation ul ul {
+            background-color: #c42f2f;
+        }
+
+        .main-navigation .main-nav ul ul li a {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul ul li:not([class*="current-menu-"]):hover>a,
+        .main-navigation .main-nav ul ul li:not([class*="current-menu-"]):focus>a,
+        .main-navigation .main-nav ul ul li.sfHover:not([class*="current-menu-"])>a {
+            color: #fcd9d6;
+            background-color: #c42f2f;
+        }
+
+        .main-navigation .main-nav ul ul li[class*="current-menu-"]>a {
+            color: #fcd9d6;
+            background-color: #c42f2f;
+        }
+
+        .separate-containers .inside-article,
+        .separate-containers .comments-area,
+        .separate-containers .page-header,
+        .one-container .container,
+        .separate-containers .paging-navigation,
+        .inside-page-header {
+            background-color: #ffffff;
+        }
+
+        .entry-title a {
+            color: #222222;
+        }
+
+        .entry-title a:hover {
+            color: #55555e;
+        }
+
+        .entry-meta {
+            color: #595959;
+        }
+
+        .sidebar .widget {
+            background-color: #ffffff;
+        }
+
+        .footer-widgets {
+            background-color: #ffffff;
+        }
+
+        .footer-widgets .widget-title {
+            color: #000000;
+        }
+
+        .site-info {
+            color: #ffffff;
+            background-color: #55555e;
+        }
+
+        .site-info a {
+            color: #ffffff;
+        }
+
+        .site-info a:hover {
+            color: #d3d3d3;
+        }
+
+        .footer-bar .widget_nav_menu .current-menu-item a {
+            color: #d3d3d3;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        input[type="password"],
+        input[type="search"],
+        input[type="tel"],
+        input[type="number"],
+        textarea,
+        select {
+            color: #666666;
+            background-color: #fafafa;
+            border-color: #cccccc;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="url"]:focus,
+        input[type="password"]:focus,
+        input[type="search"]:focus,
+        input[type="tel"]:focus,
+        input[type="number"]:focus,
+        textarea:focus,
+        select:focus {
+            color: #666666;
+            background-color: #ffffff;
+            border-color: #bfbfbf;
+        }
+
+        button,
+        html input[type="button"],
+        input[type="reset"],
+        input[type="submit"],
+        a.button,
+        a.wp-block-button__link:not(.has-background) {
+            color: #ffffff;
+            background-color: #55555e;
+        }
+
+        button:hover,
+        html input[type="button"]:hover,
+        input[type="reset"]:hover,
+        input[type="submit"]:hover,
+        a.button:hover,
+        button:focus,
+        html input[type="button"]:focus,
+        input[type="reset"]:focus,
+        input[type="submit"]:focus,
+        a.button:focus,
+        a.wp-block-button__link:not(.has-background):active,
+        a.wp-block-button__link:not(.has-background):focus,
+        a.wp-block-button__link:not(.has-background):hover {
+            color: #ffffff;
+            background-color: #3f4047;
+        }
+
+        a.generate-back-to-top {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: #ffffff;
+        }
+
+        a.generate-back-to-top:hover,
+        a.generate-back-to-top:focus {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+        }
+
+        @media (max-width:768px) {
+
+            .main-navigation .menu-bar-item:hover>a,
+            .main-navigation .menu-bar-item.sfHover>a {
+                background: none;
+                color: #ffffff;
+            }
+        }
+
+        .nav-below-header .main-navigation .inside-navigation.grid-container,
+        .nav-above-header .main-navigation .inside-navigation.grid-container {
+            padding: 0px 20px 0px 20px;
+        }
+
+        .site-main .wp-block-group__inner-container {
+            padding: 40px;
+        }
+
+        .separate-containers .paging-navigation {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .entry-content .alignwide,
+        body:not(.no-sidebar) .entry-content .alignfull {
+            margin-left: -40px;
+            width: calc(100% + 80px);
+            max-width: calc(100% + 80px);
+        }
+
+        .rtl .menu-item-has-children .dropdown-menu-toggle {
+            padding-left: 20px;
+        }
+
+        .rtl .main-navigation .main-nav ul li.menu-item-has-children>a {
+            padding-right: 20px;
+        }
+
+        @media (max-width:768px) {
+
+            .separate-containers .inside-article,
+            .separate-containers .comments-area,
+            .separate-containers .page-header,
+            .separate-containers .paging-navigation,
+            .one-container .site-content,
+            .inside-page-header {
+                padding: 30px;
+            }
+
+            .site-main .wp-block-group__inner-container {
+                padding: 30px;
+            }
+
+            .inside-top-bar {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .inside-header {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .widget-area .widget {
+                padding-top: 30px;
+                padding-right: 30px;
+                padding-bottom: 30px;
+                padding-left: 30px;
+            }
+
+            .footer-widgets-container {
+                padding-top: 30px;
+                padding-right: 30px;
+                padding-bottom: 30px;
+                padding-left: 30px;
+            }
+
+            .inside-site-info {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .entry-content .alignwide,
+            body:not(.no-sidebar) .entry-content .alignfull {
+                margin-left: -30px;
+                width: calc(100% + 60px);
+                max-width: calc(100% + 60px);
+            }
+
+            .one-container .site-main .paging-navigation {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* End cached CSS */
+        .is-right-sidebar {
+            width: 30%;
+        }
+
+        .is-left-sidebar {
+            width: 30%;
+        }
+
+        .site-content .content-area {
+            width: 70%;
+        }
+
+        @media (max-width:768px) {
+
+            .main-navigation .menu-toggle,
+            .sidebar-nav-mobile:not(#sticky-placeholder) {
+                display: block;
+            }
+
+            .main-navigation ul,
+            .gen-sidebar-nav,
+            .main-navigation:not(.slideout-navigation):not(.toggled) .main-nav>ul,
+            .has-inline-mobile-toggle #site-navigation .inside-navigation>*:not(.navigation-search):not(.main-nav) {
+                display: none;
+            }
+
+            .nav-align-right .inside-navigation,
+            .nav-align-center .inside-navigation {
+                justify-content: space-between;
+            }
+        }
+    </style>
+    <link rel="icon" href="https://samnclas.github.io/img/cropped-soalbelajar-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://samnclas.github.io/img/cropped-soalbelajar-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://samnclas.github.io/img/cropped-soalbelajar-180x180.png" />
+    <meta name="msapplication-TileImage" content="https://samnclas.github.io/img/cropped-soalbelajar-270x270.png" />
+</head>
+
+<body
+    class="home blog wp-custom-logo wp-embed-responsive right-sidebar nav-above-header separate-containers nav-search-enabled nav-aligned-center header-aligned-center dropdown-hover"
+    itemtype="https://schema.org/Blog" itemscope>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-dark-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 0.49803921568627" />
+                    <feFuncG type="table" tableValues="0 0.49803921568627" />
+                    <feFuncB type="table" tableValues="0 0.49803921568627" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 1" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0 1" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-purple-yellow">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-red">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 1" />
+                    <feFuncG type="table" tableValues="0 0.27843137254902" />
+                    <feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-midnight">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 0" />
+                    <feFuncG type="table" tableValues="0 0.64705882352941" />
+                    <feFuncB type="table" tableValues="0 1" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-magenta-yellow">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.78039215686275 1" />
+                    <feFuncG type="table" tableValues="0 0.94901960784314" />
+                    <feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-purple-green">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0.44705882352941 0.4" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-orange">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.098039215686275 1" />
+                    <feFuncG type="table" tableValues="0 0.66274509803922" />
+                    <feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><a class="screen-reader-text skip-link" href="#content" title="Langsung ke isi">Langsung ke isi</a>
+    <nav class="main-navigation nav-align-center has-menu-bar-items sub-menu-right" id="site-navigation"
+        aria-label="Utama" itemtype="https://schema.org/SiteNavigationElement" itemscope>
+        <div class="inside-navigation grid-container">
+            <form method="get" class="search-form navigation-search" action="/">
+                <input type="search" class="search-field" value="" name="q" title="Cari" />
+            </form> <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                <span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                        <path
+                            d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z" />
+                    </svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="1em" height="1em">
+                        <path
+                            d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" />
+                    </svg></span><span class="mobile-menu">Menu</span> </button>
+            <div id="primary-menu" class="main-nav">
+                <ul id="menu-soal-belajar" class=" menu sf-menu">
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1"><a
+                            href="https://samnclas.github.io">Home</a></li>
+                </ul>
+                </ul>
+            </div>
+            <div class="menu-bar-items"><span class="menu-bar-item search-item"><a aria-label="Buka Kolom Pencarian"
+                        href="#"><span class="gp-icon icon-search"><svg viewBox="0 0 512 512"
+                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M208 48c-88.366 0-160 71.634-160 160s71.634 160 160 160 160-71.634 160-160S296.366 48 208 48zM0 208C0 93.125 93.125 0 208 0s208 93.125 208 208c0 48.741-16.765 93.566-44.843 129.024l133.826 134.018c9.366 9.379 9.355 24.575-.025 33.941-9.379 9.366-24.575 9.355-33.941-.025L337.238 370.987C301.747 399.167 256.839 416 208 416 93.125 416 0 322.875 0 208z" />
+                            </svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                width="1em" height="1em">
+                                <path
+                                    d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" />
+                            </svg></span></a></span></div>
+        </div>
+    </nav>
+    <header class="site-header grid-container" id="masthead" aria-label="Situs"
+        itemtype="https://schema.org/WPHeader" itemscope>
+        <div class="inside-header grid-container">
+            <h1 class="site-logo">
+                <a href="https://samnclas.github.io" rel="home"> QnA</a>
+            </h1>
+        </div>
+    </header>
+
+    <div class="site grid-container container hfeed" id="page">
+        <div class="site-content" id="content">
+            <div class="content-area" id="primary">
+                    <main class="site-main" id="main">
+        <article id="post-1327" class="post-1327 post type-post status-publish format-standard hentry category-info"
+            itemtype="https://schema.org/CreativeWork" itemscope="">
+            <div class="inside-article">
+                <header class="entry-header" aria-label="Konten">
+                    <h1 class="entry-title" itemprop="headline">What Is Silos In Devops</h1>
+                    <div class="entry-meta">
+                       <span
+                            class="byline">oleh <span class="author vcard" itemprop="author"
+                                itemtype="https://schema.org/Person" itemscope=""><span class="author-name"
+                                    itemprop="name">miahresilosa2266</span></span></span>
+                    </div>
+                </header>
+                <div class="entry-content" itemprop="text">
+                    <div style="text-align: center">
+                        <img src="https://tse1.mm.bing.net/th?q=What+Is+Silos+In+Devops" alt="What Is Silos In Devops">
+                    </div>
+                    <p></p>
+                    <p>what is a principle of devops?</p>
+                    <div id="ez-toc-container"
+                        class="ez-toc-v2_0_40 counter-hierarchy ez-toc-counter ez-toc-light-blue ez-toc-container-direction">
+                        <div class="ez-toc-title-container">
+                            <p class="ez-toc-title">Daftar Isi</p>
+                            <span class="ez-toc-title-toggle"><a href="#"
+                                    class="ez-toc-pull-right ez-toc-btn ez-toc-btn-xs ez-toc-btn-default ez-toc-toggle"
+                                    area-label="ez-toc-toggle-icon-1"><label for="item-63b392361c4a0"
+                                        aria-label="Table of Content"><span
+                                            style="display: flex;align-items: center;width: 35px;height: 30px;justify-content: center;direction:ltr;"><svg
+                                                style="fill: #999;color:#999" xmlns="http://www.w3.org/2000/svg"
+                                                class="list-377408" width="20px" height="20px" viewBox="0 0 24 24"
+                                                fill="none">
+                                                <path
+                                                    d="M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z"
+                                                    fill="currentColor"></path>
+                                            </svg><svg style="fill: #999;color:#999" class="arrow-unsorted-368013"
+                                                xmlns="http://www.w3.org/2000/svg" width="10px" height="10px"
+                                                viewBox="0 0 24 24" version="1.2" baseProfile="tiny">
+                                                <path
+                                                    d="M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z">
+                                                </path>
+                                            </svg></span></label><input type="checkbox" id="item-63b392361c4a0"></a></span>
+                        </div>
+                        <nav>
+                            <ul class="ez-toc-list ez-toc-list-level-1 ">
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#what-is-a-principle-of-devops">1.
+                                            what is a principle of devops?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#what-is-a-principle-of-devops">2.
+                                            what is a principle of devops?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#what-is-a-principle-of-devops">3.
+                                            what is a principle of devops?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#which-statement-describes-a-benefit-of-devops">4.
+                                            which statement describes a benefit of devops?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#what-is-devops-and-agile">5.
+                                            What is DevOps and Agile?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#what-is-a-common-misconception-about-agile-and-devops">6.
+                                            What is a common misconception about Agile and DevOps?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#what-are-the-phases-of-devops">7.
+                                            What are the phases of DevOps?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#which-benefits-of-adopting-a-devops-approach-could-be-included-in-a-business-case-to-adopt-a-devops-approach">8.
+                                            Which benefits of adopting a devops approach could be included in a business case to adopt a devops approach?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#what-is-a-common-misconception-about-agile-and-devops-accenture">9.
+                                            what is a common misconception about agile and devops accenture</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#how-do-agile-and-devops-interrelate">10.
+                                            How do Agile and DevOps interrelate?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#siloorenosi-what-is-the-puzzle%e2%80%8b">11.
+                                            siloorenosi what is the puzzle?​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#what-are-the-objectives-of-devops-at-accenture">12.
+                                            What are the objectives of devops at accenture</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#mariz-is-standing-at-c-which-is-8-feet-from-a-silo-her-distance-to-a-point-of-tangency-is-16-feet-what-is-the-radius-of-the-silo-what-is-the-solution%e2%80%8b">13.
+                                            Mariz is standing at C which is 8 feet from a silo. Her distance to a point of tangency is 16 feet, What is the radius of the silo? what is the solution​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#what-is-a-common-misconception-about-agile-and-devops-methodologies">14.
+                                            what is a common misconception about agile and devops methodologies</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#what-is-a-benefit-devops-brings-to-the-way-a-company-works">15.
+                                            What is a benefit devops brings to the way a company works?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#farmer-zeke-has-filled-his-entire-silo-with-this-harvests-grain-the-silos-radius-measures-45-feet-the-height-of-the-silo-measures-135-feet-what-is-the-volume-of-the-grain-silo%e2%80%8b">16.
+                                            farmer zeke has filled his entire silo with this harvest's grain. The silo's radius measures 45 feet. The height of the silo measures 135 feet. what is the volume of the grain silo?​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#what-other-term-of-silos-means">17.
+                                            What other term of SILOS means?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#what-is-production-in-devops">18.
+                                            What is production in DevOps?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#accurate-description-of-agile-and-devops-in-accenture">19.
+                                            accurate description of agile and devops in accenture</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#which-statement-is-true-about-agile-and-devops">20.
+                                            Which statement is true about Agile and DevOps?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#differentiate-horizontal-silos-from-vertical-silos%e2%80%8b">21.
+                                            differentiate horizontal silos from vertical silos?​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#what-is-common-misconception-about-agile-and-devops">22.
+                                            What is common misconception about agile and devops</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#what-is-the-definition-of-a-unit-test-from-a-devops-perspective">23.
+                                            What is the definition of a unit test from a DevOps perspective?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#how-to-implement-devops-successfully%e2%80%8b">24.
+                                            how to implement DevOps successfully?​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#what-is-a-common-misconceptions-about-agile-and-devops-they-are-methodologies">25.
+                                            what is a common misconceptions about agile and devops they are methodologies</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#how-do-agile-and-devops-interrelate-accenture">26.
+                                            How do agile and devops interrelate accenture?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#in-which-phase-of-the-devops-lifecycle-configuration-management-belongs">27.
+                                            In which phase of the DevOps lifecycle configuration management belongs?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#what-are-key-objectives-of-devops-at-accenture">28.
+                                            what are key objectives of devops at accenture?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#how-devops-helps-solved-the-problem-of-an-organization%e2%80%8b">29.
+                                            how DevOps helps solved the problem of an organization​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#what-are-key-objectives-of-devops-at-accenture">30.
+                                            what are key objectives of devops at accenture?</a>
+                                    </li>
+                                                            </ul>
+                        </nav>
+                    </div>
+                                            <h2 class="ez-toc-section" id="what-is-a-principle-of-devops">
+                            1. what is a principle of devops?</h2><br />
+                        <p><strong>Answer:</strong></p><p>Maybe you clould research it men</p><p><strong>Explanation:</strong></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="what-is-a-principle-of-devops">
+                            2. what is a principle of devops?</h2><br />
+                        <p><strong>Answer:</strong></p><p><strong>DevOps is about removing the barriers between traditionally siloed teams, development and operations. Under a DevOps model, development and operations teams work together across the entire software application life cycle, from development and test through deployment to operations.</strong></p><p></p><p></p><p><strong>Answer:</strong></p>QUESTIONwhat is a principle of devops?ANSWER<strong>Devops </strong><strong>were </strong><strong>removing </strong><strong>barriers </strong><strong>in </strong><strong>traditionally</strong><p></p><p><strong>Explanation:</strong></p><p>#CarryOnLearning</p><p></p><p>[tex] \geqslant  \leqslant [/tex]</p><p>_JWQ123</p><br />
+                                            <h2 class="ez-toc-section" id="what-is-a-principle-of-devops">
+                            3. what is a principle of devops?</h2><br />
+                        <p><strong>Answer:</strong></p><p>The main theory behind DevOps is to combine development and operations to create a unilateral team that focuses on delivering common objectives. For brands to achieve this, they need to encourage development and operations to regularly communicate, share ideas and problem-solve together.</p><br />
+                                            <h2 class="ez-toc-section" id="which-statement-describes-a-benefit-of-devops">
+                            4. which statement describes a benefit of devops?</h2><br />
+                        <p><strong>Answer:</strong></p><p>The practice of DevOps encourages smoother, continuous communication, collaboration, integration, visibility, and transparency between application development teams (Dev) and their IT operations team (Ops) counterparts.</p><p><strong>Explanation:</strong></p><p>Hope it help </p><br />
+                                            <h2 class="ez-toc-section" id="what-is-devops-and-agile">
+                            5. What is DevOps and Agile?</h2><br />
+                        <p><strong>Answer:</strong></p><p></p><strong>DevOps is a culture, fostering collaboration amongst all participants involved in the development and maintenance of software.</strong><p></p><strong>Agile can be described as a development methodology designed to maintain productivity and drive releases with the common reality of changing needs.</strong><br />
+                                            <h2 class="ez-toc-section" id="what-is-a-common-misconception-about-agile-and-devops">
+                            6. What is a common misconception about Agile and DevOps?</h2><br />
+                        <p><strong>Answer:</strong></p><p>Myth 1: DevOps Requires Agile</p><p>Agile development is a methodology of software delivery, incrementally applied in its creation, while DevOps enables in faster software delivery. DevOps refers not only to a delivery method but to an entire culture. Adopting DevOps results in multiple benefits for the businesses.</p><br />
+                                            <h2 class="ez-toc-section" id="what-are-the-phases-of-devops">
+                            7. What are the phases of DevOps?</h2><br />
+                        <p><strong>Answer:</strong></p><p>Development operation</p><p></p><br />
+                                            <h2 class="ez-toc-section" id="which-benefits-of-adopting-a-devops-approach-could-be-included-in-a-business-case-to-adopt-a-devops-approach">
+                            8. Which benefits of adopting a devops approach could be included in a business case to adopt a devops approach?</h2><br />
+                        <p><strong>Answer:</strong></p><p>Adoption of DevOps practices offers varied benefits to the different stakeholders within the organization including the development team, IT operations staff, and business owners. </p><p></p><p>It is only natural for the business owners to want to ensure that the time and efforts invested in implementing DevOps within their organization bring about quantifiable business returns, Here are the  key business benefits of adopting a DevOps Strategy for your organization.</p><p></p><p>1. Faster software development cycle</p><p></p><p>2. Improved interoperability among the teams</p><p></p><p>3. Continuous releases and deployments</p><p></p><p>4. Early defect detection leading to quality software development</p><p></p><p>5. Improved customer experience and greater customer satisfaction</p><p></p><p>6. Increased productivity as a result of streamlined business processes</p><p></p><p>7. Fostering innovation within the organization</p><p></p><p>8. Greater employee satisfaction</p><p><strong>Explanation:</strong></p><p>pa brainliest po</p><br />
+                                            <h2 class="ez-toc-section" id="what-is-a-common-misconception-about-agile-and-devops-accenture">
+                            9. what is a common misconception about agile and devops accenture</h2><br />
+                        <p><strong>Answer:</strong></p><p><strong>Question</strong><strong>:</strong><strong> </strong><strong>what is a common misconception about agile and devops accenture</strong></p><p></p><p><strong>Answer</strong><strong>:</strong></p><p></p><p>There is a <strong>common</strong> <strong>misconception</strong> that Agile and DevOps cannot work together, which does a disservice to everyone in the software development and delivery field.</p><p></p><p>#READYTOHELP </p><br />
+                                            <h2 class="ez-toc-section" id="how-do-agile-and-devops-interrelate">
+                            10. How do Agile and DevOps interrelate?</h2><br />
+                        <p><strong>Explanation:</strong></p><p>DevOps is a practice of bringing development and operations teams together whereas Agile is an iterative approach that focuses on collaboration, customer feedback and small rapid releases. ... DevOps leverages both shifts left and right principles, on the other hand, Agile leverage shift-left principle.</p><br />
+                                            <h2 class="ez-toc-section" id="siloorenosi-what-is-the-puzzle%e2%80%8b">
+                            11. siloorenosi what is the puzzle?​</h2><br />
+                        <p><strong>Answer:</strong></p><p>puz·zle</p><p>/ˈpəzəl/</p><p>Learn to pronounce</p><p>verb</p><p>cause (someone) to feel confused because they cannot understand or make sense of something.</p><p>"one remark he made puzzled me</p><br />
+                                            <h2 class="ez-toc-section" id="what-are-the-objectives-of-devops-at-accenture">
+                            12. What are the objectives of devops at accenture</h2><br />
+                        <p><strong>Answer:</strong></p><p>The ultimate goal of DevOps is to unify development and operations end-to-end. Yet, many organizations struggle to complete the full adoption journey from a single application to the enterprise level</p><p><strong>Explanation:</strong></p><p><strong>#</strong><strong>I</strong><strong> </strong><strong>hopw </strong><strong>helps </strong></p><p><strong>#</strong><strong>C</strong><strong>a</strong><strong>r</strong><strong>r</strong><strong>y</strong><strong>l</strong><strong>e</strong><strong>r</strong><strong>n</strong><strong>i</strong><strong>n</strong><strong>g</strong></p><p></p><p><strong>pa </strong><strong>follow</strong><strong> </strong><strong>po </strong><strong>and </strong><strong>bràinless</strong><strong> </strong><strong>at </strong><strong>hurt </strong></p><p><strong>Answer:</strong></p><p>sorry po;/ need ko points</p><br />
+                                            <h2 class="ez-toc-section" id="mariz-is-standing-at-c-which-is-8-feet-from-a-silo-her-distance-to-a-point-of-tangency-is-16-feet-what-is-the-radius-of-the-silo-what-is-the-solution%e2%80%8b">
+                            13. Mariz is standing at C which is 8 feet from a silo. Her distance to a point of tangency is 16 feet, What is the radius of the silo? what is the solution​</h2><br />
+                        <p>Pythagorean Theorem: a² + b² = c²</p><p></p><p>The hypotenuse of the right triangle c is r + 8, thus</p><p>a² + b² = c²</p><p>r² + 16² = (r + 8)²</p><p>r² + 256 = (r + 8)²</p><p>Solve for r:</p><p>r = 12</p><p>(NOTE: solution on attached picture)</p><p></p><p><strong>Answer:</strong><strong> </strong><strong>1</strong><strong>2</strong><strong> </strong><strong>ft</strong></p><br />
+                                            <h2 class="ez-toc-section" id="what-is-a-common-misconception-about-agile-and-devops-methodologies">
+                            14. what is a common misconception about agile and devops methodologies</h2><br />
+                        <p><strong>Answer:</strong></p><p><strong>Question</strong><strong>:</strong><strong> </strong><strong>what is a common misconception about agile and devops methodologies</strong></p><p></p><p><strong>Answer</strong><strong>:</strong></p><p></p><p>DevOps and Agile are not synonyms. Agile development is a methodology of software delivery, incrementally applied in its creation, while DevOps enables in faster software delivery. DevOps refers not only to a delivery method but to an entire culture.</p><p></p><p>#READYTOHELP </p><br />
+                                            <h2 class="ez-toc-section" id="what-is-a-benefit-devops-brings-to-the-way-a-company-works">
+                            15. What is a benefit devops brings to the way a company works?</h2><br />
+                        <p><strong>Answer:</strong></p><p>DevOps enables that by helping your teams focus on the customer experience, uniting teams for faster product shipments, simplifying the goals of each release, introducing automation (which reduces errors and frees developer time for other projects) and creating a feedback loop that benefits the entire company.</p><br />
+                                            <h2 class="ez-toc-section" id="farmer-zeke-has-filled-his-entire-silo-with-this-harvests-grain-the-silos-radius-measures-45-feet-the-height-of-the-silo-measures-135-feet-what-is-the-volume-of-the-grain-silo%e2%80%8b">
+                            16. farmer zeke has filled his entire silo with this harvest's grain. The silo's radius measures 45 feet. The height of the silo measures 135 feet. what is the volume of the grain silo?​</h2><br />
+                        <p><strong>Answer:</strong></p><p>180 feet</p><p></p><p><strong>Step-by-step explanation:</strong></p><p>Ayan na boss welcome.</p><br />
+                                            <h2 class="ez-toc-section" id="what-other-term-of-silos-means">
+                            17. What other term of SILOS means?</h2><br />
+                        <p><strong>Answer:</strong></p><p>In this page you can discover 10 synonyms, antonyms, idiomatic expressions, and related words for silo, like: granary, crib, dunnage, tank, pit, superhardened silo, bunker, rocket-launcher, defense and storehouse.</p><br />
+                                            <h2 class="ez-toc-section" id="what-is-production-in-devops">
+                            18. What is production in DevOps?</h2><br />
+                        <p>Try these free, hands-on tutorials using Oracle Cloud</p><p></p><p>Create Apps from a Spreadsheet</p><p></p><p>Try a 10-minute tutorial to transform a spreadsheet into an application using Oracle APEX.</p><p>Get started</p><p></p><p>Build Microservices Application</p><p></p><p>Try a 30-minute self-guided lab to develop an event-driven, Kubernetes-based, microservices application.</p><p>Learn more</p><p></p><p>Deploy WebLogic App to the Cloud</p><p></p><p>Try a self-guided lab to deploy a WebLogic Java application and database to Oracle Cloud Infrastructure.</p><p></p><p></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="accurate-description-of-agile-and-devops-in-accenture">
+                            19. accurate description of agile and devops in accenture</h2><br />
+                        <p><strong>Answer:</strong></p><p></p>Agile focuses on cross-functional team communication and deploying constant iterative releases. <p></p>DevOps focuses on uniting the Development and Operations teams in a continuous development process<p></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="which-statement-is-true-about-agile-and-devops">
+                            20. Which statement is true about Agile and DevOps?</h2><br />
+                        <p><strong>Answer:</strong></p><p>. Agile focuses on delivering customer value, while DevOps focuses on testing</p><p><strong>Explanation:</strong></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="differentiate-horizontal-silos-from-vertical-silos%e2%80%8b">
+                            21. differentiate horizontal silos from vertical silos?​</h2><br />
+                        The main distinction with these silos is that they take up more sky space and can come with a customisable diverging funnel flow cone at the bottom to handle any type of load.<br />
+                                            <h2 class="ez-toc-section" id="what-is-common-misconception-about-agile-and-devops">
+                            22. What is common misconception about agile and devops</h2><br />
+                        <p><strong>Answer:</strong></p><p>Agile development is a methodology of software delivery, incrementally applied in its creation, while DevOps enables in faster software delivery. DevOps refers not only to a delivery method but to an entire culture. Adopting DevOps results in multiple benefits for the businesses.hope it helps!</p><p><strong>Answer:</strong></p><p></p><p>There are no synonyms for DevOps and Agile. Agile development is a software delivery approach that is incrementally implemented in its development, while DevOps allows for faster software delivery. DevOps refers not only to a system of distribution, but to an entire community.</p><p></p><br />
+                                            <h2 class="ez-toc-section" id="what-is-the-definition-of-a-unit-test-from-a-devops-perspective">
+                            23. What is the definition of a unit test from a DevOps perspective?</h2><br />
+                        <p><strong>Answer:</strong></p><p>A unit test from a DevOps perspective is a type of automated software testing that verifies the functionality of a small piece of code, usually a single function or method, in isolation from the rest of the system. It is designed to ensure that the code is functioning correctly and meets its intended purpose. Unit tests are typically written by developers and executed as part of the build process, often in an automated testing framework, to identify issues and prevent bugs from entering the codebase. They play a crucial role in the DevOps process by enabling continuous integration and delivery of software, ensuring that changes can be quickly and confidently deployed to production.</p><p><strong>Explanation:</strong></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="how-to-implement-devops-successfully%e2%80%8b">
+                            24. how to implement DevOps successfully?​</h2><br />
+                        <p><strong>Answer:</strong></p><p>1.Prepare for a cultural shift. ...</p><p>2.Create a continuous integration, continuous delivery platform. ...</p><p>3.Create a continuous testing environment. ...</p><p>4.Establish a continuous deployment system. ...</p><p>5.Make use of blue/green deployment.</p><br />
+                                            <h2 class="ez-toc-section" id="what-is-a-common-misconceptions-about-agile-and-devops-they-are-methodologies">
+                            25. what is a common misconceptions about agile and devops they are methodologies</h2><br />
+                        <p><strong>Answer:</strong></p><p><strong>Question</strong><strong>:</strong><strong> </strong><strong>what is a common misconceptions about agile and devops they are methodologies</strong></p><p></p><p><strong>Answer</strong><strong>:</strong></p><p></p><p>The frequent <strong>collaboration</strong> is another aspect where Agile and DevOps share a common goal. The team members have to collaborate with each other, whichever method they are opting for. In addition, the groups have to also give frequent updates regarding the development process. </p><p></p><p>#READYTOHELP </p><br />
+                                            <h2 class="ez-toc-section" id="how-do-agile-and-devops-interrelate-accenture">
+                            26. How do agile and devops interrelate accenture?</h2><br />
+                        <p><strong>Answer:</strong></p><p>The correct answer to the question “How do Agile and DevOps interrelate” is option (a). Iterations of new increments of software use requirements developed by DevOps. As all the other options do not correctly depict the Agile and DevOps relation.</p><p><strong>Explanation:</strong></p><p>good luck with your studies</p><br />
+                                            <h2 class="ez-toc-section" id="in-which-phase-of-the-devops-lifecycle-configuration-management-belongs">
+                            27. In which phase of the DevOps lifecycle configuration management belongs?</h2><br />
+                        <p>The DevOps lifecycle includes seven phases as given below:</p><p></p><p>1) Continuous Development. This phase involves the planning and coding of the software. ... </p><p></p><p>2) Continuous Integration. ... </p><p></p><p>3) Continuous Testing. ... </p><p></p><p>4) Continuous Monitoring. ... </p><p></p><p>5) Continuous Feedback. ... </p><p></p><p>6) Continuous Deployment. ... </p><p></p><p>7) Continuous Operations.</p><p></p><p></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="what-are-key-objectives-of-devops-at-accenture">
+                            28. what are key objectives of devops at accenture?</h2><br />
+                        <p><strong>Answer:</strong></p><p>Answer. The key objectives are security, automation, process and monitoring</p><p></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="how-devops-helps-solved-the-problem-of-an-organization%e2%80%8b">
+                            29. how DevOps helps solved the problem of an organization​</h2><br />
+                        <p><strong>Answer:</strong></p><p>DevOps helps organizations to create and improve products at a faster pace than they can with traditional software development approaches.</p><p>A Development team first builds and tests code in an isolated environment for quality assurance, and then releases it to a Operations team for production.</p><p><strong>Explanation:</strong></p><p>This is my own answer.</p><p>#BRAINLYEVERYDAY</p><br />
+                                            <h2 class="ez-toc-section" id="what-are-key-objectives-of-devops-at-accenture">
+                            30. what are key objectives of devops at accenture?</h2><br />
+                        What are key objectives of devops at accenture?
+<p>
+</p>The key objectives are security, automation, process and monitoring.
+•	Devops is a project management system that combines the emphasis on development and processes. Its key objectives are -
+<p>1. <strong>Security</strong> </p> The technique's main core section is to protect it. Engineers can sometimes exhibit flaws, resulting in a weakened system in the future. As a result, it only grants access to projects to those that need it.
+<p>2. <strong>Automation</strong></p> Automated interventions save development groups time and money by detecting flaws in the arrangement quickly and allowing the company time to correct issues before the item is sent to the customer.
+<p>3. <strong>Process</strong></p> Before it is sent to the customer, the item goes through a robotic venture that determines the foundation of the item, aids its turn of events, and thoroughly checks its accuracy.
+<p>4. <strong>Monitoring</strong> </p>Regardless of if an object is completed and delivered, the Devops interaction takes a long time to complete. Security groups should continuously screen the item and structures to ensure continued quality and protection for the customer.
+<p>
+</p>DevOps is a method of combining software creation and IT activities. This is done to shorten the machine implementation life cycle and provide a stable approach that is higher in consistency and more efficient.
+Accenture is a consulting firm that helps businesses optimize their activities through the use of digital technologies. The firm has many tools to offer its clients a digital advantage over their competitors. It assists organizations and individuals in selecting, assessing, designing, and simulating end-to-end cloud solutions.
+What is Accenture's biggest differentiator when it comes to providing Artificial Intelligence (AI) applications to clients? Accenture offers AI applications without the participation of third-party suppliers. Following the implementation of AI, Accenture provides customers with an infinite number of resources. Accenture is a consultancy company that allows companies to optimize their operations by using emerging technology. The company has a plethora of technologies at its disposal to provide its customers with a digital edge over their rivals. It helps companies and people pick, evaluate, build and simulate end-to-end cloud solutions.
+<p>
+</p><p>
+</p><p><strong>For more information visit this link:  </strong></p><p><strong>https://brainly.in/question/35392358  </strong></p><p><strong>https://brainly.in/question/35002849  </strong></p><p><strong>#LetsStudy</strong></p><br />
+                    
+                </div>
+                <div class="youtubeVideo" style="text-align: center">
+                    <h3>Video Terkait</h3>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/hkudwrx70qo?controls=0" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen></iframe>
+                </div>
+                <footer class="entry-meta" aria-label="Meta postingan">
+                    <span class="cat-links"><span class="gp-icon icon-categories"><svg viewBox="0 0 512 512"
+                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                                <path
+                                    d="M0 112c0-26.51 21.49-48 48-48h110.014a48 48 0 0143.592 27.907l12.349 26.791A16 16 0 00228.486 128H464c26.51 0 48 21.49 48 48v224c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112z">
+                                </path>
+                            </svg></span><span class="screen-reader-text">Kategori </span>computer_science</span>
+            </div>
+        </article>
+    </main>
+            </div>
+            <div class="widget-area sidebar is-right-sidebar" id="right-sidebar">
+                <div class="inside-right-sidebar">
+                    <aside id="categories-2" class="widget inner-padding widget_categories">
+                        <h2 class="widget-title">Topik</h2>
+                        <ul>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://samnclas.github.io/federigo-s-falcon-setting.html">Federigo s Falcon Setting</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://samnclas.github.io/maja-salvador-s-father.html">Maja Salvador s Father</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://samnclas.github.io/5-katangian-ng-wika.html">5 Katangian Ng Wika</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://samnclas.github.io/express-one-s-beliefs-convictions-based-on-a-material-viewed.html">Express One s Beliefs Convictions Based On A Material Viewed</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://samnclas.github.io/what-is-the-theme-of-the-taximan-s-story.html">What Is The Theme Of The Taximan s Story</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://samnclas.github.io/sun-s-rays-are-observed-to-focus.html">Sun s Rays Are Observed To Focus</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://samnclas.github.io/anong-uri-ng-tulang-romansa-ang-ibong-adarna.html">Anong Uri Ng Tulang Romansa Ang Ibong Adarna</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://samnclas.github.io/soul-and-space-in-art-appreciation.html">Soul And Space In Art Appreciation</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://samnclas.github.io/terrestrial-and-coastal-navigation.html">Terrestrial And Coastal Navigation</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://samnclas.github.io/bakit-mahalaga-ang-anyong-lupa.html">Bakit Mahalaga Ang Anyong Lupa</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://samnclas.github.io/ano-ang-magasin.html">Ano Ang Magasin</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://samnclas.github.io/teoryang-kognitib-halimbawa.html">Teoryang Kognitib Halimbawa</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://samnclas.github.io/daing-kahulugan.html">Daing Kahulugan</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://samnclas.github.io/mga-halimbawa-ng-kambal-katinig.html">Mga Halimbawa Ng Kambal Katinig</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://samnclas.github.io/ang-munting-prinsipe-cedie.html">Ang Munting Prinsipe Cedie</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://samnclas.github.io/ano-ang-meter-ng-awitin.html">Ano Ang Meter Ng Awitin</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://samnclas.github.io/refresh-past-tense.html">Refresh Past Tense</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://samnclas.github.io/pumaimbulog-kahulugan.html">Pumaimbulog Kahulugan</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://samnclas.github.io/7-sakramento-ng-binyag.html">7 Sakramento Ng Binyag</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://samnclas.github.io/monolingguwalismo-bilingguwalismo-multilingguwalismo.html">Monolingguwalismo Bilingguwalismo Multilingguwalismo</a>
+                                </li>
+                                                    </ul>
+
+                    </aside>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="site-footer">
+        <footer class="site-info" aria-label="Situs" itemtype="https://schema.org/WPFooter" itemscope>
+            <div class="inside-site-info grid-container">
+                <div class="copyright-bar">
+                    <span class="copyright">&copy; 2023 <a href="https://samnclas.github.io"
+                            itemprop="url">QnA</a></span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <a title="Gulirkan kembali ke puncak laman" aria-label="Gulirkan kembali ke puncak laman" rel="nofollow"
+        href="#" class="generate-back-to-top" data-scroll-speed="400" data-start-scroll="300">
+        <span class="gp-icon icon-arrow-up"><svg viewBox="0 0 330 512" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd"
+                clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+                <path
+                    d="M305.863 314.916c0 2.266-1.133 4.815-2.832 6.514l-14.157 14.163c-1.699 1.7-3.964 2.832-6.513 2.832-2.265 0-4.813-1.133-6.512-2.832L164.572 224.276 53.295 335.593c-1.699 1.7-4.247 2.832-6.512 2.832-2.265 0-4.814-1.133-6.513-2.832L26.113 321.43c-1.699-1.7-2.831-4.248-2.831-6.514s1.132-4.816 2.831-6.515L158.06 176.408c1.699-1.7 4.247-2.833 6.512-2.833 2.265 0 4.814 1.133 6.513 2.833L303.03 308.4c1.7 1.7 2.832 4.249 2.832 6.515z"
+                    fill-rule="nonzero" />
+            </svg></span>
+    </a>
+    <script id="generate-a11y">
+        ! function() {
+            "use strict";
+            if ("querySelector" in document && "addEventListener" in window) {
+                var e = document.body;
+                e.addEventListener("mousedown", function() {
+                    e.classList.add("using-mouse")
+                }), e.addEventListener("keydown", function() {
+                    e.classList.remove("using-mouse")
+                })
+            }
+        }();
+    </script>
+    <!--[if lte IE 11]>
+<script src='https://samnclas.github.io/js/classList.min.js' ?ver=3.2.4' id='generate-classlist-js'></script>
+<![endif]-->
+    <script id='generate-menu-js-extra'>
+        var generatepressMenu = {
+            "toggleOpenedSubMenus": "1",
+            "openSubMenuLabel": "Buka Submenu",
+            "closeSubMenuLabel": "Tutup submenu"
+        };
+    </script>
+    <script src='https://samnclas.github.io/js/menu.min.js' ?ver=3.2.4' id='generate-menu-js'></script>
+    <script id='generate-navigation-search-js-extra'>
+        var generatepressNavSearch = {
+            "open": "Buka Kolom Pencarian",
+            "close": "Tutup Kolom Pencarian"
+        };
+    </script>
+    <script src='https://samnclas.github.io/js/navigation-search.min.js' ?ver=3.2.4' id='generate-navigation-search-js'></script>
+    <script id='generate-back-to-top-js-extra'>
+        var generatepressBackToTop = {
+            "smooth": "1"
+        };
+    </script>
+    <script src='https://samnclas.github.io/js/back-to-top.min.js' ?ver=3.2.4' id='generate-back-to-top-js'></script>
+    <script type='text/javascript' src='//jd3j7g5z1fqs.com/96/78/7a/96787a1945876b1a9c10f79941441964.js'></script>
+<script type='text/javascript' src='//jd3j7g5z1fqs.com/b4/f1/ef/b4f1ef8dfe59b7fa68754094cf6c8e0e.js'></script>
+  <!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4739059,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4739059&101" alt="" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+</body>
+
+</html>
